@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+
+        <title>SILEG | ADMIN</title>
+
+        <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css"/>
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../dist/css/adminlte.min.css"/>
+        <!-- Google Font: Source Roboto  font-family: 'Roboto', sans-serif; font-family:'RobotoMono'monospace; -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,500;0,700;1,700&family;=Roboto:wght@300&display;=swap"
+            rel="stylesheet"/>  
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+
+    </h:head>
+    <h:body>
+        <div class="wrapper">
+
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+
+
+                <!-- SEARCH FORM -->
+                <form class="form-inline ml-3">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="buscar"/>
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Right navbar links -->
+
+                <!-- Notifications Dropdown Menu -->
+
+
+                <ul class="navbar-nav ml-auto">                
+                    <li>
+                        <h:form id="salir">  
+                            <h:commandLink id="link" action="#{usuarioSesion.cerraSesion()}" ></h:commandLink>
+                        </h:form>
+
+                        <a class="logout" onclick="$('#salir\\:link').click()" ><i
+                                class="fas fa-sign-out-alt"></i></a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <!-- Brand Logo -->
+                <a href="#" class="brand-link">
+                    <img src="../img/beer.png" alt="SILEG Logo" class="brand-image img-circle elevation-3" style="opacity: .8"/>
+                    <span class="brand-text font-weight-light">SILEG</span>
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="../img/bri.jpg" class="img-circle elevation-2" alt="User Image"/>
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block">Brian Olarte</a>
+                            <p class="text-center" style="font-family: Roboto; color: white;" >Admin</p>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+                          with font-awesome or any other icon font library -->
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <p>
+                                        Modulos
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="registrarVenta.xhtml" class="nav-link">
+                                            <p>Ventas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="canjepuntos.html" class="nav-link">
+                                            <p>Canje de puntos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="inventarios.html" class="nav-link">
+                                            <p>Inventarios</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="fidelizacion-admin.html" class="nav-link">
+                                            <p>Fidelización</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="usuarios.html" class="nav-link">
+                                            <p>Usuarios</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="reportes.html" class="nav-link">
+                                            <p>Reportes</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+            <div class="content-wrapper">
+                <div class="container-fluid">
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 bg-gradient-primary ">
+                            <h6 class="m-0 font-weight-bold text-white">Recibo Servicio</h6>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="  form-group row">
+                                    <div class="col-8">
+                                        <h6>Laviis</h6>
+
+                                        <h6>Nombre Cliente <h:inputText style="border:hidden" html5:placeholder=""/></h6>
+                                        <h6>Apellidos Cliente <h:inputText style="border:hidden" html5:placeholder=""/></h6>
+                                        <h6> <h:inputText  style="border:hidden" html5:placeholder=""/></h6>
+                                        <h6>Direccion <h:inputText  style="border:hidden" html5:placeholder=""/></h6>
+                                        <h6>Barrio <h:inputText  style="border:hidden" html5:placeholder=""/></h6>
+                                    </div>
+                                    <div class="col-4">
+                                        <h6>Fecha: <h:inputText  style="border:hidden" html5:placeholder=""/></h6>
+                                        <h6>No. factura: <h:inputText  style="border:hidden" html5:placeholder=""/></h6>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="table-responsive">
+
+                                </div>
+
+                            </form>
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead class="bg-gradient-primary text-white">
+                                                <tr>
+                                                    <th>Observaciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea class="form-group" style="border:hidden" rows="6" cols="70" ></textarea></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="bg-gradient-primary text-white">Subtotal</th>
+                                                    <th><input type="number" class="form-control input-sm" style="border:hidden"/></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="bg-gradient-primary text-white">%IVA</th>
+                                                    <td><input type="number" class="form-control input-sm" style="border:hidden"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="bg-gradient-primary text-white">Envío</th>
+                                                    <td><input type="number" class="form-control input-sm" style="border:hidden"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="bg-gradient-primary text-white">TOTAL</th>
+                                                    <td><input type="number" class="form-control input-sm" style="border:hidden"/></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary float-right  mt-2 mb-2 mr-2" data-toggle="modal" data-target="#alerta1"><i class="fas fa-save"></i> Guardar y enviar</button>
+                            <div class="modal modal-sm float-centered" id="alerta1">
+                                <div class="modal-dialog float-center">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h6>Se ha guardado y enviado correctamente</h6>
+                                            <button class="btn-sm bg-gradient-primary text-white float-right" data-dismiss="modal">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="views/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    </h:body>
+</html>

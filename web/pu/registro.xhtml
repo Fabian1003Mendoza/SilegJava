@@ -34,10 +34,10 @@
         <div id="login-page">
             <div class="container">
                 <h:form id="registro" class="form-login">
-                    <h2 class="form-login-heading">Registro Usuario Nuevo</h2>
+                    <h2 class="form-login-heading">Registrarse</h2>
                     <div class="login-wrap">
 
-                        <h:selectOneMenu value="#{registroRequest.usuReg.tipoDocumento}" class="form-control">
+                        <h:selectOneMenu value="#{registroRequest.usuReg.tipoDocumento}"  class="form-control">
                             <f:selectItem itemLabel="Cedula" itemValue="Cedula" ></f:selectItem>
                             <f:selectItem itemLabel="Cedula Ex." itemValue="Cedula Ex." ></f:selectItem>
                             <f:selectItem itemLabel="Pasaporte" itemValue="Pasaporte" ></f:selectItem>
@@ -46,17 +46,17 @@
                         </h:selectOneMenu>
                         <br/>
 
-                        <h:inputText  value="#{registroRequest.registrarUsuario()}" class="form-control" html5:placeholder="Numero documento" html5:autofocus="true"/>
+                        <h:inputText value="#{registroRequest.usuReg.documento}"  class="form-control" html5:placeholder="Numero documento" html5:autofocus="true"/>
                         <br/>
 
 
-                        <h:inputText  value="#{registroRequest.usuReg.nombres}" class="form-control" html5:placeholder="Nombres" html5:autofocus="true"/>
+                        <h:inputText value="#{registroRequest.usuReg.nombres}"  class="form-control" html5:placeholder="Nombres" html5:autofocus="true"/>
                         <br/>
                         <h:inputText value="#{registroRequest.usuReg.apellidos}" class="form-control" html5:placeholder="Apellidos" html5:autofocus="true"/>
                         <br/>
-                        <h:inputText  value="#{registroRequest.usuReg.correo}" html5:type="email" class="form-control" html5:placeholder="Correo" html5:autofocus="true"/>
+                        <h:inputText value="#{registroRequest.usuReg.correo}" html5:type="email" class="form-control" html5:placeholder="Correo" html5:autofocus="true"/>
                         <br/>
-                        <h:inputSecret  value="#{registroRequest.usuReg.clave}" class="form-control" html5:placeholder="Clave"/>
+                        <h:inputSecret value="#{registroRequest.usuReg.clave}"  class="form-control" html5:placeholder="Clave"/>
 
                         <label class="checkbox">
                             <span class="pull-right">
@@ -72,7 +72,7 @@
                             <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
                         </div>
                         <div class="centered">
-                            <a href="../index.xhtml" class="btn btn-success btn-lg"  ><i class="fa fa-user-circle-o"></i> Login</a>
+                            <a href="index.xhtml" class="btn btn-success btn-lg"  ><i class="fa fa-user-circle-o"></i> Login</a>
                         </div>
 
                     </div>
