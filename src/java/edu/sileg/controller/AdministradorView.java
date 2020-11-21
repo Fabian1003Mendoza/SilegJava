@@ -32,14 +32,14 @@ public class AdministradorView implements Serializable {
         listaUsuarios.addAll(usuarioFacadeLocal.findAll());
     }
 
-    public void removerUsuario(Usuario usuRemov) {
+    public void removerUsuario(Usuario usuario) {
         String mensajeAlerta = "";
         try {
-            usuarioFacadeLocal.remove(usuRemov);
-            listaUsuarios.remove(usuRemov);
-            mensajeAlerta = "swal('Removido el usuario', '" + usuRemov.getNombres() + ' ' + usuRemov.getApellidos() + "', 'success');";
+            usuarioFacadeLocal.remove(usuario);
+            listaUsuarios.remove(usuario);
+            mensajeAlerta = "swal('Removido el usuario', '" + usuario.getNombres() + ' ' + usuario.getApellidos() + "', 'success');";
         } catch (Exception e) {
-            mensajeAlerta = "swal('Problemas eliminando a ', '" + usuRemov.getNombres() + ' ' + usuRemov.getApellidos() + "', 'error');";
+            mensajeAlerta = "swal('Problemas eliminando a ', '" + usuario.getNombres() + ' ' + usuario.getApellidos() + "', 'error');";
         }
         PrimeFaces.current().executeScript(mensajeAlerta);
 
