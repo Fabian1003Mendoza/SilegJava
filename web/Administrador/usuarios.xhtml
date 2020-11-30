@@ -205,17 +205,18 @@
 
                                                                         <tr>
                                                                             <td>
-                                                                                #{usu.tipoDocumento} #{usu.documento}
-                                                                            </td>
+                                                                                #{usu.tipoDocumento} #{usu.documento}</td>
                                                                             <td class="hidden-phone">#{usu.nombres} #{usu.apellidos}</td>
                                                                             <td> #{usu.correo} </td>
                                                                             <td><span class="label label-info label-mini">
                                                                                     #{usu.fechaRegistro}
                                                                                 </span></td>
                                                                             <td>
-                                                                                <c:if test="#{usuarioSesion.usuLogin.documento != usu.documento}">
-                                                                                    <h:commandButton action="#{administradorView.removerUsuario(usu)}"></h:commandButton>      
-                                                                                </c:if>
+                                                                                 
+                                                                            <c:if test="#{usuarioSesion.usuLogin.documento != usu.documento}">
+                                                                             <h:commandButton  action="#{administradorView.removerUsuario(usu)}"></h:commandButton>  
+                                                                            
+                                                                             </c:if>
                                                                             </td>
                                                                         </tr>
                                                                     </c:forEach>

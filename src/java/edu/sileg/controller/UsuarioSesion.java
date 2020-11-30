@@ -104,5 +104,6 @@ public class UsuarioSesion implements Serializable {
     public void setUsuLogin(Usuario usuLogin) {
         this.usuLogin = usuLogin;
     }
+    
 
 }

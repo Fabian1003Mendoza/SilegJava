@@ -13,6 +13,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import org.primefaces.PrimeFaces;
 
 /**
@@ -23,9 +24,15 @@ import org.primefaces.PrimeFaces;
 @ViewScoped
 public class AdministradorView implements Serializable {
 
-    @EJB
+      @EJB
     UsuarioFacadeLocal usuarioFacadeLocal;
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+    private Usuario usuarioSelect = new Usuario();
+    private Usuario usuReg = new Usuario();
+    
+    @Inject
+    UsuarioSesion usuarioSesion;
+    
 
     @PostConstruct
     public void cargaUsuarios() {
@@ -58,5 +65,23 @@ public class AdministradorView implements Serializable {
     public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
+
+    public Usuario getUsuarioSelect() {
+        return usuarioSelect;
+    }
+
+    public void setUsuarioSelect(Usuario usuarioSelect) {
+        this.usuarioSelect = usuarioSelect;
+    }
+
+    public Usuario getUsuReg() {
+        return usuReg;
+    }
+
+    public void setUsuReg(Usuario usuReg) {
+        this.usuReg = usuReg;
+    }
+  
+    
 
 }

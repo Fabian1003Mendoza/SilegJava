@@ -53,5 +53,17 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
         return  new Usuario();
         }
     }
+    @Override
+      public boolean removerUsuario(int id) {
+        boolean retorno = false;
+        try {
+            Query qt = em.createQuery("DELETE FROM Usuario u WHERE u.id = :id");
+            qt.setParameter("id", id);
+            int salida = qt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return retorno;
+        }
+    }
     
 }
