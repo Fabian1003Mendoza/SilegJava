@@ -43,6 +43,13 @@ public class Compras implements Serializable {
     @Column(name = "fecha_compra")
     @Temporal(TemporalType.DATE)
     private Date fechaCompra;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "subtotal")
+    private Double subtotal;
+    @Column(name = "iva")
+    private Double iva;
+    @Column(name = "total")
+    private Double total;
     @JoinColumn(name = "idproveedores", referencedColumnName = "idproveedores")
     @ManyToOne(fetch = FetchType.LAZY)
     private Proveedores idproveedores;
@@ -68,6 +75,30 @@ public class Compras implements Serializable {
 
     public void setFechaCompra(Date fechaCompra) {
         this.fechaCompra = fechaCompra;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public Double getIva() {
+        return iva;
+    }
+
+    public void setIva(Double iva) {
+        this.iva = iva;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
     public Proveedores getIdproveedores() {

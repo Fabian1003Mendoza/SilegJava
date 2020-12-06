@@ -17,7 +17,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.Query;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -230,6 +229,6 @@ public class Usuario implements Serializable {
     @Override
     public String toString() {
         return "edu.sileg.entity.Usuario[ idusuario=" + idusuario + " ]";
-    }  
+    }
     
 }

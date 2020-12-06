@@ -55,17 +55,12 @@ public class Productos implements Serializable {
     private String presentacion;
     @Column(name = "precio_compra")
     private Double precioCompra;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "fecha_venc")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date fechaVenc;
     @JoinColumn(name = "idcategorias_productos", referencedColumnName = "idcategorias_productos")
     @ManyToOne(fetch = FetchType.LAZY)
     private CatProductos idcategoriasProductos;
-    @JoinColumn(name = "idproveedores", referencedColumnName = "idproveedores")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Proveedores idproveedores;
 
     public Productos() {
     }
@@ -141,14 +136,6 @@ public class Productos implements Serializable {
 
     public void setIdcategoriasProductos(CatProductos idcategoriasProductos) {
         this.idcategoriasProductos = idcategoriasProductos;
-    }
-
-    public Proveedores getIdproveedores() {
-        return idproveedores;
-    }
-
-    public void setIdproveedores(Proveedores idproveedores) {
-        this.idproveedores = idproveedores;
     }
 
     @Override

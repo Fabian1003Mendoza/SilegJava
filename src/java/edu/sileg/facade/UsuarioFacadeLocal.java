@@ -30,11 +30,4 @@ public interface UsuarioFacadeLocal {
 
     int count();
     
-    public Usuario recuperarContrasenia(String correoIn);
-
-    public Usuario loginUsuario(String correoIn, String claveIn);
-     
-    public boolean removerUsuario(int id);
-    
-    
 }

@@ -41,7 +41,7 @@ public class UsuarioSesion implements Serializable {
     public void inicioSession() {
         String mensajeAlerta = "";
         try {
-            usuLogin = usuarioFacadeLocal.loginUsuario(correoIn, clave);
+            //usuLogin = usuarioFacadeLocal.loginUsuario(correoIn, clave);
             if (usuLogin.getIdusuario()== null) {
                 mensajeAlerta = "swal('Verifique sus datos', 'Intente de nuevo', 'error');";
             } else {

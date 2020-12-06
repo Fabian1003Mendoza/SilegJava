@@ -54,12 +54,11 @@ public class Proveedores implements Serializable {
     @Size(max = 60)
     @Column(name = "direccion")
     private String direccion;
+    @Size(max = 15)
+    @Column(name = "telefono")
+    private String telefono;
     @OneToMany(mappedBy = "idproveedores", fetch = FetchType.LAZY)
     private Collection<Compras> comprasCollection;
-    @OneToMany(mappedBy = "idproveedores", fetch = FetchType.LAZY)
-    private Collection<Productos> productosCollection;
-    @OneToMany(mappedBy = "idproveedores", fetch = FetchType.LAZY)
-    private Collection<TelefonoProveedor> telefonoProveedorCollection;
 
     public Proveedores() {
     }
@@ -113,6 +112,14 @@ public class Proveedores implements Serializable {
         this.direccion = direccion;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
     @XmlTransient
     public Collection<Compras> getComprasCollection() {
         return comprasCollection;
@@ -120,24 +127,6 @@ public class Proveedores implements Serializable {
 
     public void setComprasCollection(Collection<Compras> comprasCollection) {
         this.comprasCollection = comprasCollection;
-    }
-
-    @XmlTransient
-    public Collection<Productos> getProductosCollection() {
-        return productosCollection;
-    }
-
-    public void setProductosCollection(Collection<Productos> productosCollection) {
-        this.productosCollection = productosCollection;
-    }
-
-    @XmlTransient
-    public Collection<TelefonoProveedor> getTelefonoProveedorCollection() {
-        return telefonoProveedorCollection;
-    }
-
-    public void setTelefonoProveedorCollection(Collection<TelefonoProveedor> telefonoProveedorCollection) {
-        this.telefonoProveedorCollection = telefonoProveedorCollection;
     }
 
     @Override
